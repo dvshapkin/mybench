@@ -26,11 +26,11 @@ mod tests {
 
     #[test]
     fn bench_ok() {
-        bench!(test_func, "Var1");
-        bench!(test_func, 100_000, "Var2");
+        bench!(wrapper, "Var1");
+        bench!(wrapper, 100_000, "Var2");
     }
 
-    fn test_func() {
+    fn wrapper() {
         for i in 0..1000 {
             let _ = i*i;
         }
