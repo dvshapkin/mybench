@@ -4,6 +4,16 @@ version = "0.1.0"
 authors = ["dvshapkin <dvshapkin@mail.ru>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Simple (and very primitive) benchmarking"
+
+readme = "README.md"
+
+documentation = "https://docs.rs/mybench"
+homepage = "https://github.com/dvshapkin/mybench"
+repository = "https://github.com/dvshapkin/mybench"
+
+keywords = ["benchmarking", "performance-measurement"]
+
+license = "MIT"
 
 [dependencies]
