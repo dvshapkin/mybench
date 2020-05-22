@@ -12,7 +12,7 @@ documentation = "https://docs.rs/mybench"
 homepage = "https://github.com/dvshapkin/mybench"
 repository = "https://github.com/dvshapkin/mybench"
 
-keywords = ["benchmarking", "performance-measurement"]
+keywords = ["benchmarking", "performance-measure"]
 
 license = "MIT"
 
