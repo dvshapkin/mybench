@@ -1,6 +1,6 @@
 [package]
 name = "mybench"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["dvshapkin <dvshapkin@mail.ru>"]
 edition = "2018"
 
