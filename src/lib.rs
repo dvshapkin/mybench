@@ -1,3 +1,7 @@
+/// Measures the average code execution time in N repetitions.
+/// `bench!(wrapper_func, N, "Prompt")` execute `wrapper_func` N repetitions.
+/// `bench!(wrapper_func, "Prompt")` execute `wrapper_func` 10,000 repetitions.
+/// The result prints to the standard output as `Prompt: xxx.yy ms`.
 #[macro_export]
 macro_rules! bench {
     ($func:expr, $description:expr) => {
