@@ -1,5 +1,3 @@
-use std::time::{Instant, Duration};
-
 #[macro_export]
 macro_rules! bench {
     ($func:expr, $description:expr) => {
@@ -7,17 +5,13 @@ macro_rules! bench {
     };
     ($func:expr, $count:expr, $description:expr) => {
         let n: u32 = $count;
-        let start = Instant::now();
+        let start = std::time::Instant::now();
         for _ in 0..n {
             $func();
         }
-        let stop = Instant::now();
-        log($description, stop.saturating_duration_since(start) / n);
+        let stop = std::time::Instant::now();
+        println!("{}: {:?}", $description, stop.saturating_duration_since(start) / n)
     }
-}
-
-fn log(description: &str, time_spent: Duration) {
-    println!("{}: {:?}", description, time_spent)
 }
 
 #[cfg(test)]

@@ -17,20 +17,19 @@ Simple (and very primitive) benchmarking macro.
 ### Examples
 
 <pre><code>
-#[cfg(test)]
-mod tests {
-    use super::*;
+extern crate mybench;
 
-    #[test]
-    fn bench_ok() {
-        bench!(wrapper, "Var1");
-        bench!(wrapper, 100_000, "Var2");
-    }
+use mybench::bench;
 
-    fn wrapper() {
-        for i in 0..1000 {
-            let _ = i*i;
-        }
+#[test]
+fn bench_ok() {
+    bench!(wrapper, "Var1");
+    bench!(wrapper, 100_000, "Var2");
+}
+
+fn wrapper() {
+    for i in 0..1000 {
+        let _ = i*i;
     }
 }
 </code></pre>
