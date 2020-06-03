@@ -6,13 +6,13 @@ Simple (and very primitive) benchmarking macro.
 
 ### Use cases:
 
-- bench!(wrapper_func, "prompt")
+- bench!(wrapper_func, "Prompt")
     Сalculates average execution time for code inside `wrapper_func` function for 10,000 repetitions.
-    The result is displayed as `prompt: xxx.yy ms`
 
-- bench!(wrapper_func, number_of_repetitions, "prompt")
+- bench!(wrapper_func, number_of_repetitions, "Prompt")
     Сalculates average execution time for code inside `wrapper_func` function for `number_of_repetitions` repetitions.
-    The result is displayed as `prompt: xxx.yy ms`
+
+Result is displayed as `filename:row:col 'Prompt' xxx.yy ms`
 
 ### Examples
 
@@ -23,8 +23,8 @@ use mybench::bench;
 
 #[test]
 fn bench_ok() {
-    bench!(wrapper, "Var1");
-    bench!(wrapper, 100_000, "Var2");
+    bench!(wrapper, "Prompt 1");
+    bench!(wrapper, 100_000, "Prompt 2");
 }
 
 fn wrapper() {

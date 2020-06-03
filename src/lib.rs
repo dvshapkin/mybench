@@ -1,10 +1,10 @@
-/// Measures the average code execution time in N repetitions.
+/// Measures average code execution time in N repetitions.
 /// 
 /// `bench!(wrapper_func, N, "Prompt")` execute `wrapper_func` N repetitions.
 /// 
 /// `bench!(wrapper_func, "Prompt")` execute `wrapper_func` 10,000 repetitions.
 /// 
-/// The result prints to the standard output as `Prompt: xxx.yy ms`.
+/// The result prints to the standard output as `filename:row:col 'Prompt' xxx.yy ms`.
 #[macro_export]
 macro_rules! bench {
     ($func:expr, $description:expr) => {
@@ -16,12 +16,14 @@ macro_rules! bench {
         for _ in 0..n {
             $func();
         }
-        let elapsed = start.elapsed() / n;
-        if elapsed.as_secs() > 60 {
-            println!("{}: {} s", $description, elapsed.as_secs_f32())
-        } else {
-            println!("{}: {:?}", $description, elapsed)
-        }
+        println!(
+            "{}:{}:{} '{}' {:?}",
+            file!(),
+            line!(),
+            column!(),
+            $description,
+            start.elapsed() / n
+        );
         
     }
 }
