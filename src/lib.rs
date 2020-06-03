@@ -1,8 +1,8 @@
 /// Measures average code execution time in N repetitions.
 /// 
-/// `bench!(wrapper_func, N, "Prompt")` execute `wrapper_func` N repetitions.
+/// `bench!(wrapper, N, "Prompt")` execute `wrapper` function N repetitions.
 /// 
-/// `bench!(wrapper_func, "Prompt")` execute `wrapper_func` 10,000 repetitions.
+/// `bench!(wrapper, "Prompt")` execute `wrapper` function 10,000 repetitions.
 /// 
 /// The result prints to the standard output as `filename:row:col 'Prompt' xxx.yy ms`.
 #[macro_export]

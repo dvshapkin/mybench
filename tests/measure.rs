@@ -1,6 +1,5 @@
+#[macro_use]
 extern crate mybench;
-
-use mybench::bench;
 
 #[test]
 fn bench_ok() {

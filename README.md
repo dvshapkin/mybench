@@ -6,20 +6,19 @@ Simple (and very primitive) benchmarking macro.
 
 ### Use cases:
 
-- bench!(wrapper_func, "Prompt")
-    Сalculates average execution time for code inside `wrapper_func` function for 10,000 repetitions.
+- `bench!(wrapper, "Prompt")`
+    calculates average execution time for code inside `wrapper` function for 10,000 times.
 
-- bench!(wrapper_func, number_of_repetitions, "Prompt")
-    Сalculates average execution time for code inside `wrapper_func` function for `number_of_repetitions` repetitions.
+- `bench!(wrapper, number_of_repetitions, "Prompt")`
+    calculates average execution time for code inside `wrapper` function for `number_of_repetitions` times.
 
 Result is displayed as `filename:row:col 'Prompt' xxx.yy ms`
 
 ### Examples
 
 <pre><code>
+#[macro_use]
 extern crate mybench;
-
-use mybench::bench;
 
 #[test]
 fn bench_ok() {
