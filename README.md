@@ -22,8 +22,17 @@ extern crate mybench;
 
 #[test]
 fn bench_ok() {
+    // with wrapper function
     bench!(wrapper, "Prompt 1");
     bench!(wrapper, 100_000, "Prompt 2");
+
+    // or you may use closure
+    bench!(|| {
+        for i in 0..1000 {
+            let _ = i*i;
+        }
+    }, 
+    100_000, "With closure");
 }
 
 fn wrapper() {

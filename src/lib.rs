@@ -4,6 +4,8 @@
 /// 
 /// `bench!(wrapper, "Prompt")` execute `wrapper` function 10,000 times.
 /// 
+/// `bench!(|| { ... }, 1000, "With closure")` execute closure 1,000 times.
+///
 /// The result prints to the standard output as `filename:row:col 'Prompt' xxx.yy ms`.
 #[macro_export]
 macro_rules! bench {
