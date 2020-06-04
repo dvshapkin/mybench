@@ -1,8 +1,8 @@
-/// Measures average code execution time in N repetitions.
+/// Measures average code execution time in N times.
 /// 
-/// `bench!(wrapper, N, "Prompt")` execute `wrapper` function N repetitions.
+/// `bench!(wrapper, N, "Prompt")` execute `wrapper` function N times.
 /// 
-/// `bench!(wrapper, "Prompt")` execute `wrapper` function 10,000 repetitions.
+/// `bench!(wrapper, "Prompt")` execute `wrapper` function 10,000 times.
 /// 
 /// The result prints to the standard output as `filename:row:col 'Prompt' xxx.yy ms`.
 #[macro_export]
@@ -34,8 +34,8 @@ mod tests {
 
     #[test]
     fn bench_ok() {
-        bench!(wrapper, "Var1");
-        bench!(wrapper, 100_000, "Var2");
+        bench!(wrapper, "Prompt 1");
+        bench!(wrapper, 100_000, "Prompt 2");
     }
 
     fn wrapper() {

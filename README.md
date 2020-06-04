@@ -32,3 +32,20 @@ fn wrapper() {
     }
 }
 </code></pre>
+
+Output:
+
+<pre><code>
+running 1 test
+tests\mybench.rs:6:5 'Prompt 1' 29.581µs
+tests\mybench.rs:7:5 'Prompt 2' 29.693µs
+test bench_ok ... ok
+</code></pre>
+
+If you don't see stdout, try this: `cargo test -- --show-output`
+
+If you see:
+<pre><code>
+test bench_ok ... test bench_ok has been running for over 60 seconds
+</code></pre>
+Don't worry, this is an intermediate result (the test is not yet completed). Wait a little longer and let the test end.

@@ -3,8 +3,8 @@ extern crate mybench;
 
 #[test]
 fn bench_ok() {
-    bench!(wrapper, "Var1");
-    bench!(wrapper, 100_000, "Var2");
+    bench!(wrapper, "Prompt 1");
+    bench!(wrapper, 100_000_00, "Prompt 2");
 }
 
 fn wrapper() {
