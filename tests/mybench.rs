@@ -4,7 +4,7 @@ extern crate mybench;
 #[test]
 fn bench_ok() {
     bench!(wrapper, "Prompt 1");
-    bench!(wrapper, 100_000_00, "Prompt 2");
+    bench!(wrapper, 100_000, "Prompt 2");
 }
 
 fn wrapper() {
